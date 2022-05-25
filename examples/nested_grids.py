@@ -65,5 +65,5 @@ r = AgGrid(
     height=500,
     allow_unsafe_jscode=True,
     enable_enterprise_modules=True,
-    update_mode=GridUpdateMode.SELECTION_CHANGED
+    update_mode=GridUpdateMode.SELECTION_CHANGED,
 )

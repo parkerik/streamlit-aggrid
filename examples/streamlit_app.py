@@ -15,11 +15,13 @@ dashboards = {
     "Inside st.form": os.path.join(root, "forms.py"),
     "Pinned Row": os.path.join(root, "pinned_rows.py"),
     "Theming & Pre-Selection": os.path.join(root, "themes_and_pre_selection.py"),
-    "Nested Grids" : os.path.join(root, "nested_grids.py"), 
-    "Rich Cell Editor" : os.path.join(root, "rich_cell_editor.py") 
+    "Nested Grids": os.path.join(root, "nested_grids.py"),
+    "Rich Cell Editor": os.path.join(root, "rich_cell_editor.py"),
 }
 
-choice_from_url = query_params = st.experimental_get_query_params().get("example", ["Main Example"])[0]
+choice_from_url = query_params = st.experimental_get_query_params().get(
+    "example", ["Main Example"]
+)[0]
 index = list(dashboards.keys()).index(choice_from_url)
 
 choice = st.sidebar.radio("Examples", list(dashboards.keys()), index=index)
@@ -30,6 +32,8 @@ with open(path, encoding="utf-8") as code:
     c = code.read()
     exec(c, globals())
 
-    with st.expander('Code for this example:'):
-        st.markdown(f"""``` python
-{c}```""")
+    with st.expander("Code for this example:"):
+        st.markdown(
+            f"""``` python
+{c}```"""
+        )
